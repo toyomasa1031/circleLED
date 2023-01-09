@@ -1,13 +1,17 @@
 input.onButtonPressed(Button.A, function () {
     pins.servoWritePin(AnalogPin.P0, 120)
-    basic.pause(1000)
+    basic.pause(700)
     pins.servoWritePin(AnalogPin.P0, 0)
 })
 input.onButtonPressed(Button.AB, function () {
     basic.showIcon(IconNames.Happy)
-    strip.showRainbow(1, 360)
-    basic.pause(500)
-    strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    for (let index = 0; index < 4; index++) {
+        strip.showRainbow(1, 360)
+        basic.pause(200)
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+        basic.pause(200)
+    }
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.B, function () {
     for (let index = 0; index < 2; index++) {
