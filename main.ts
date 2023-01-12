@@ -1,24 +1,28 @@
 input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Happy)
-    pins.servoWritePin(AnalogPin.P0, 120)
     strip.showColor(neopixel.colors(NeoPixelColors.Red))
+    pins.servoWritePin(AnalogPin.P0, 45)
+    basic.pause(500)
+    pins.servoWritePin(AnalogPin.P0, 0)
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.AB, function () {
     basic.showIcon(IconNames.Heart)
     for (let index = 0; index < 2; index++) {
         strip.showRainbow(1, 360)
-        basic.pause(200)
         pins.servoWritePin(AnalogPin.P0, 120)
         basic.pause(500)
         pins.servoWritePin(AnalogPin.P0, 0)
+        basic.pause(500)
         strip.showColor(neopixel.colors(NeoPixelColors.Black))
-        basic.pause(200)
     }
     basic.clearScreen()
 })
 input.onButtonPressed(Button.B, function () {
     basic.showIcon(IconNames.Sad)
     strip.showColor(neopixel.colors(NeoPixelColors.White))
+    pins.servoWritePin(AnalogPin.P0, 80)
     basic.pause(500)
     pins.servoWritePin(AnalogPin.P0, 0)
     strip.showColor(neopixel.colors(NeoPixelColors.Black))
